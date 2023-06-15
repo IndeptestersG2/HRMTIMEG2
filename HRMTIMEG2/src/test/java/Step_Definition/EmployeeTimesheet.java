@@ -15,47 +15,48 @@ public class EmployeeTimesheet extends TestBase {
     //}
 
     @When("^I click on the Time section$")
-    public void iClickOnTheTimeSection() {
+    public void iClickOnTheTimeSection() throws InterruptedException {
         EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
         Pages.ClickHRMTimeMenu();
+        Thread.sleep(3000);
     }
 
     @And("^I click on the Timesheet sub-section$")
-    public void iClickOnTheTimesheetSubSection() {
+    public void iClickOnTheTimesheetSubSection() throws InterruptedException {
         EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
         Pages.ClickSubFeatureTimesheet();
+        Thread.sleep(2000);
     }
 
     @And("^I select the Employee Timesheets sub-section$")
-    public void iSelectTheEmployeeTimesheetsSubSection() {
+    public void iSelectTheEmployeeTimesheetsSubSection() throws InterruptedException {
         EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
         Pages.ClickOnEmployeeTimesheet();
+        Thread.sleep(3000);
     }
 
     @Then("^I should be navigated to Select-Employee page$")
-    public void iShouldBeNavigatedToSelectEmployeePage() {
+    public void iShouldBeNavigatedToSelectEmployeePage() throws InterruptedException {
         EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
         Pages.ConfirmEmployeeTimeSheetPage();
+        Thread.sleep(3000);
     }
 
 
 
     @When("^I click on the Employee Name field$")
-    public void iClickOnTheEmployeeNameField() {
+    public void iClickOnTheEmployeeNameField() throws InterruptedException {
         EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
         Pages.ClickOnNameFieldForSelectEmployee();
+
     }
 
-    @And("^I type Fiona Grace on the Emplyee name field$")
-    public void iTypeFionaGraceOnTheEmplyeeNameField() {
-        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
-        Pages.EnterEmployeeUserName();
-    }
 
     @And("^I click the View Button$")
-    public void iClickTheViewButton() {
+    public void iClickTheViewButton() throws InterruptedException {
         EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
         Pages.ClickViewBtn();
+        Thread.sleep(2000);
     }
 
     @Then("^I should get an error message$")

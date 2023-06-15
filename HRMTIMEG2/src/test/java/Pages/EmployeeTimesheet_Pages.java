@@ -22,13 +22,11 @@ public class EmployeeTimesheet_Pages {
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/div[2]/div/div/input")
     public static WebElement ClickUserNameField;
 
-    @FindBy(how = How.NAME, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/div[2]/div/div/input")
-    public static WebElement TypeInUsername;
 
-    @FindBy(how = How.NAME, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/form/div[2]/button")
-    public static WebElement IclickViewButton;
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/form/div[2]/button")
+    public static WebElement IClickViewButton;
 
-    @FindBy(how = How.NAME, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/span")
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/span")
     public static WebElement ErrorMessageAssert;
 
 
@@ -53,17 +51,13 @@ public class EmployeeTimesheet_Pages {
         ClickUserNameField.click();
     }
 
-    public void EnterEmployeeUserName() {
-        TypeInUsername.sendKeys("Fiona Grace");
-    }
-
     public void ClickViewBtn() {
-        IclickViewButton.click();
+        IClickViewButton.click();
     }
 
     public void AssertInvalidErrorMessage() {
         ErrorMessageAssert.isDisplayed();
-        String ExpectedErrorMessage = "Invalid";
+        String ExpectedErrorMessage = "Required";
         String ActualErrorMessage = ErrorMessageAssert.getText();
         Assert.assertEquals(ExpectedErrorMessage, ActualErrorMessage);
         System.out.println(ActualErrorMessage);
