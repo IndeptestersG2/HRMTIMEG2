@@ -21,6 +21,7 @@ Feature: EmployeeTimesheet
     And   I click on the delete icon button to delete a timesheet role
     When  I Click on the cancel button
     Then  I should be take to my timesheet page
+    And   I click Edit button again
     And   I click on the Reset button
     Then  I should be navigated to the Edit page with the restored deleted timesheet role
     And   I click on the Save button

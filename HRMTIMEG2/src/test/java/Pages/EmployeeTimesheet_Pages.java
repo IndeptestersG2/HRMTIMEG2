@@ -29,7 +29,7 @@ public class EmployeeTimesheet_Pages {
     @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/span")
     public static WebElement ErrorMessageAssert;
 
-    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[2]/div/div[3]/div/button")
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[3]/div/div[3]/div/button")
     public static WebElement ViewButtonPaulC;
 
     @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[1]/div[1]/h6")
@@ -38,8 +38,8 @@ public class EmployeeTimesheet_Pages {
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[1]/i")
     public static WebElement ToggleButtonBackWards;
 
-    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[1]/i")
-    public static WebElement ToggleButtonBackWards2;
+   // @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[1]/i")
+    //public static WebElement ToggleButtonBackWards2;
 
     @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[2]/i")
     public static WebElement ToggleButtonForward;
@@ -55,6 +55,9 @@ public class EmployeeTimesheet_Pages {
 
     @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[1]/div[1]/h6")
     public static WebElement AssertTimeSheetPagePC2;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button")
+    public static WebElement EditButtonAgain;
 
     @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button[2]")
     public static WebElement ResetButton;
@@ -111,14 +114,14 @@ public class EmployeeTimesheet_Pages {
 
     public void AssertTimesheetPageForPC() {
         AssertTimeSheetPagePC.isDisplayed();
+        String ExpectedDisplayPage = "Timesheet for Paul Collings";
+        String ActualDisplayPage = AssertTimeSheetPagePC.getText();
+        Assert.assertEquals(ExpectedDisplayPage, ActualDisplayPage);
+        System.out.println(ActualDisplayPage);
     }
 
     public void ClickToggleButtonBackwards() {
         ToggleButtonBackWards.click();
-    }
-
-    public void ClickToggleButtonBKWAgain() {
-        ToggleButtonBackWards2.click();
     }
 
     public void ClickToggleButtonFWD() {
@@ -139,6 +142,14 @@ public class EmployeeTimesheet_Pages {
 
     public void AssertTimesheetForPCPage() {
         AssertTimeSheetPagePC2.isDisplayed();
+        String ExpectedDisplayPage = "My Timesheet";
+        String ActualDisplayPage = AssertTimeSheetPagePC2.getText();
+        Assert.assertEquals(ExpectedDisplayPage, ActualDisplayPage);
+        System.out.println(ActualDisplayPage);
+    }
+
+    public void ClickEditButtonAgain() {
+        EditButtonAgain.click();
     }
 
     public void ClickResetButton() {
@@ -147,6 +158,11 @@ public class EmployeeTimesheet_Pages {
 
     public void AssertEditTimesheetPagePC() {
         AssertEditTimesheetPage.getText();
+        String ExpectedDisplayPage = "Edit Timesheet";
+        String ActualDisplayPage = AssertEditTimesheetPage.getText();
+        Assert.assertEquals(ExpectedDisplayPage, ActualDisplayPage);
+        System.out.println(ActualDisplayPage);
+
     }
 
     public void ClickSaveButton() {
@@ -158,7 +174,15 @@ public class EmployeeTimesheet_Pages {
     }
 
     public void AssertPerformedActionForPC() {
-        AssertPerformedAction.getText();}
+        AssertPerformedAction.getText();
+        String ExpectedDisplayPage = "Actions Performed on the Timesheet";
+        String ActualDisplayPage = AssertPerformedAction.getText();
+        Assert.assertEquals(ExpectedDisplayPage, ActualDisplayPage);
+        System.out.println(ActualDisplayPage);
+    }
 }
+
+
+
 
 
