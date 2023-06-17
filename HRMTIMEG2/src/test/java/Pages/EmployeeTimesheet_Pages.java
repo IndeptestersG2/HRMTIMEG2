@@ -29,6 +29,48 @@ public class EmployeeTimesheet_Pages {
     @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[1]/form/div[1]/div/div/div/span")
     public static WebElement ErrorMessageAssert;
 
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[2]/div/div[3]/div/button")
+    public static WebElement ViewButtonPaulC;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[1]/div[1]/h6")
+    public static WebElement AssertTimeSheetPagePC;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[1]/i")
+    public static WebElement ToggleButtonBackWards;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[1]/i")
+    public static WebElement ToggleButtonBackWards2;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[1]/div[2]/div/button[2]/i")
+    public static WebElement ToggleButtonForward;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button")
+    public static WebElement EditButtonPC;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[2]/table/tbody/tr[1]/td[10]/button/i")
+    public static WebElement EditIconBtn;
+
+    @FindBy(how = How.XPATH, using = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button[1]")
+    public static WebElement CancelButton;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[1]/div[1]/h6")
+    public static WebElement AssertTimeSheetPagePC2;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button[2]")
+    public static WebElement ResetButton;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[1]/div[1]/h6")
+    public static WebElement AssertEditTimesheetPage;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[3]/div[2]/button[3]")
+    public static WebElement SaveButton;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/form/div[1]/div[1]/h6")
+    public static WebElement AssertTimeSheetPagePC3;
+
+    @FindBy(how = How.XPATH, using = "/html/body/div/div[1]/div[2]/div[2]/div/div/div[1]/h6")
+    public static WebElement AssertPerformedAction;
+
 
 
     public void ClickHRMTimeMenu() {
@@ -62,6 +104,61 @@ public class EmployeeTimesheet_Pages {
         Assert.assertEquals(ExpectedErrorMessage, ActualErrorMessage);
         System.out.println(ActualErrorMessage);
     }
+
+    public void ClickViewButtonPC() {
+        ViewButtonPaulC.click();
+    }
+
+    public void AssertTimesheetPageForPC() {
+        AssertTimeSheetPagePC.isDisplayed();
+    }
+
+    public void ClickToggleButtonBackwards() {
+        ToggleButtonBackWards.click();
+    }
+
+    public void ClickToggleButtonBKWAgain() {
+        ToggleButtonBackWards2.click();
+    }
+
+    public void ClickToggleButtonFWD() {
+        ToggleButtonForward.click();
+    }
+
+    public void ClickEditButton() {
+        EditButtonPC.click();
+    }
+
+    public void ClickEditIconButton() {
+        EditIconBtn.click();
+    }
+
+    public void ClickCancelButton() {
+       CancelButton.click();
+    }
+
+    public void AssertTimesheetForPCPage() {
+        AssertTimeSheetPagePC2.isDisplayed();
+    }
+
+    public void ClickResetButton() {
+      ResetButton.click();
+    }
+
+    public void AssertEditTimesheetPagePC() {
+        AssertEditTimesheetPage.getText();
+    }
+
+    public void ClickSaveButton() {
+       SaveButton.click();
+    }
+
+    public void AssertTimesheet3Page() {
+        AssertTimeSheetPagePC3.isDisplayed();
+    }
+
+    public void AssertPerformedActionForPC() {
+        AssertPerformedAction.getText();}
 }
 
 

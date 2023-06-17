@@ -66,4 +66,75 @@ public class EmployeeTimesheet extends TestBase {
     }
 
 
+    @When("^I click on the view button for Paul Collings$")
+    public void iClickOnTheViewButtonForPaulCollings() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.ClickViewButtonPC();
+    }
+
+    @Then("^I should get to Paul Collings timesheet page$")
+    public void iShouldGetToPaulCollingsTimesheetPage() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.AssertTimesheetPageForPC();
+    }
+
+    @And("^I click on timesheet period toggle button backward and forward$")
+    public void iClickOnTimesheetPeriodToggleButtonBackwardAndForward() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.ClickToggleButtonBackwards();
+        Pages.ClickToggleButtonBKWAgain();
+        Pages.ClickToggleButtonFWD();
+    }
+
+
+    @When("^I click on the Edit button for Paul Collings timesheet page$")
+    public void iClickOnTheEditButtonForPaulCollingsTimesheetPage() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.ClickEditButton();
+    }
+
+    @And("^I click on the delete icon button to delete a timesheet role$")
+    public void iClickOnTheDeleteIconButtonToDeleteATimesheetRole() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.ClickEditIconButton();
+
+        }
+
+
+    @When("^I Click on the cancel button$")
+    public void iClickOnTheCancelButton() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.ClickCancelButton();
+    }
+
+    @Then("^I should be take to my timesheet page$")
+    public void iShouldBeTakeToMyTimesheetPage() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.AssertTimesheetForPCPage();
+    }
+
+    @And("^I click on the Reset button$")
+    public void iClickOnTheResetButton() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.ClickResetButton();
+    }
+
+    @Then("^I should be navigated to the Edit page with the restored deleted timesheet role$")
+    public void iShouldBeNavigatedToTheEditPageWithTheRestoredDeletedTimesheetRole() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.AssertEditTimesheetPagePC();
+    }
+
+    @And("^I click on the Save button$")
+    public void iClickOnTheSaveButton() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.ClickSaveButton();
+    }
+
+    @Then("^I should be navigated to My time sheet page$")
+    public void iShouldBeNavigatedToMyTimeSheetPage() {
+        EmployeeTimesheet_Pages Pages = PageFactory.initElements(driver,EmployeeTimesheet_Pages.class);
+        Pages.AssertTimesheet3Page();
+        Pages.AssertPerformedActionForPC();
+    }
 }
